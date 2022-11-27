@@ -40,7 +40,7 @@ class BaseModel:
 
     def to_dict(self):
         ''' return a dictionary containing all key/value of __dict__ '''
-        b_model_dict = self.__dict__
+        b_model_dict = self.__dict__.copy()
         b_model_dict['__class__'] = self.__class__.__name__
         b_model_dict['updated_at'] = self.updated_at.isoformat()
         b_model_dict['created_at'] = self.created_at.isoformat()
