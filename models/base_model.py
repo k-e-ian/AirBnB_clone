@@ -4,9 +4,10 @@ import models
 from uuid import uuid4
 from datetime import datetime
 
+
 class BaseModel:
-    ''' this is a representation of the basemodel '''
-    
+    '''this is a representation of the basemodel '''
+
     # instance - object of a class
     # attribute - variable / data
     # method - function in a class
@@ -31,7 +32,7 @@ class BaseModel:
     def __str__(self):
         ''' return class name self id and self dict '''
         class_name = self.__class__.__name__
-        return('[{:s}] ({:s}) {}'.format(class_name, self.id, self.__dict__))
+        return ('[{:s}] ({:s}) {}'.format(class_name, self.id, self.__dict__))
 
     def save(self):
         ''' update the updated_at instance attribute '''
@@ -44,7 +45,9 @@ class BaseModel:
         b_model_dict['__class__'] = self.__class__.__name__
         b_model_dict['updated_at'] = self.updated_at.isoformat()
         b_model_dict['created_at'] = self.created_at.isoformat()
-        return(b_model_dict)
+        return (b_model_dict)
+
+
 '''
 =======
 #!/usr/bin/pyhon3
